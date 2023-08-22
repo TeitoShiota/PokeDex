@@ -1,11 +1,12 @@
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
 import { PokedexContext } from '../contexts/PokedexContext'
 
 
-export default function Pokedex() {
+export default function PokedexList() {
 
-const { pokedex, updatePokemon, loading, error } = useContext(PokedexContext)
+    const { pokedex, loading, error } = useContext(PokedexContext)
     
 
     if (loading) {return <h1>Loading...</h1>}
@@ -14,13 +15,16 @@ const { pokedex, updatePokemon, loading, error } = useContext(PokedexContext)
     return (
         <>
             <h1>Pokedex</h1>
-            <button>getAdditionalInfo</button>
             <ul>
                 {pokedex.map((pokemon) => (
-                    <li key={pokemon.id}>
-                        <h2>ID: {pokemon.id} </h2>
-                        <h2>{pokemon.name}</h2>
-                    </li>
+                    <Link to={`/pokemon/${pokemon.id}`} key={pokemon.id}>
+                        <span>
+                            <li>
+                                <h2>ID: {pokemon.id} </h2>
+                                <h2>{pokemon.name}</h2>
+                            </li>
+                        </span>
+                    </Link>
                 ))}
             </ul>
 
