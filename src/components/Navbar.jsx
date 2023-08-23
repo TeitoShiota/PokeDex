@@ -11,15 +11,20 @@ export default function Navbar() {
     async function handleSubmit(event) {
         event.preventDefault();
         // Check if the pokemon is in the pokedex
-        const result = await checkPokemonInPokedex(search.toString());
+        const result = checkPokemonInPokedex(search.toString());
         // If it is, redirect to the pokemon's page
         console.log(result);
         if (result.isInDex === true) {
             console.log("Redirecting to /pokemon/" + result.id);
             navigate("/pokemon/" + result.id);
+            return;
         } else if (result.isInDex === false) {
             // If it isn't, throw an error
             alert("Pokemon not found. Please try again.");
+            return;
+        }
+        else{
+            
         }
     }
 
