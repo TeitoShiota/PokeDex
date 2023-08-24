@@ -59,6 +59,9 @@ export default function EntryDex() {
                     </div>
 
                     <Sprite pokemon={pokemon} />
+
+                    <SpriteControls/>
+                    
                     {/* <div>
                       <img src={spriteURL} alt={'Picture of ' + pokemon?.name} className='pokemon-sprite' />
                     </div> */}
