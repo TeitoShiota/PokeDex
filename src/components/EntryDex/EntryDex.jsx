@@ -5,7 +5,8 @@ import { useParams } from "react-router-dom";
 import { PokedexContext } from "../../contexts/PokedexContext";
 
 // Component Imports
-import PokemonSprite from "../PokemonSprite/PokemonSprite";
+import Sprite from "../Sprite/Sprite";
+import SpriteControls from "../SpriteControls/SpriteControls";
 
 // Style Imports
 import './EntryDex.scss'
@@ -57,7 +58,7 @@ export default function EntryDex() {
                       <p>No.{pokemon?.id}</p>
                     </div>
 
-                    <PokemonSprite pokemon={pokemon} />
+                    <Sprite pokemon={pokemon} />
                     {/* <div>
                       <img src={spriteURL} alt={'Picture of ' + pokemon?.name} className='pokemon-sprite' />
                     </div> */}
