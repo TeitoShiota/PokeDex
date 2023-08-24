@@ -24,12 +24,7 @@
     gap: 1rem;
   }
   
-  .panel {
-    /* width: 359px; */
-    padding: 10px;
-    border: inset #b31818 3px;
-    border-radius: 3px;
-  }
+ 
   
   .screen {
     background: linear-gradient(14deg, rgb(165, 205, 83) 60%, rgb(193, 217, 144) 65%);
@@ -39,6 +34,12 @@
   
   /* #region ---------Left side---------*/
   
+  .panel-left {
+    padding: 10px;
+    border: inset #b31818 3px;
+    border-radius: 3px;
+  }
+
   .pokemon-name {
     width: 100%;
     // width: 90%;
@@ -58,70 +59,49 @@
     }
   }
   
-  .pokemon-sprite {
-    // width: 90%;
-    width: 100%;
-    margin-top: 0.5rem;
-    // margin-left: auto;
-    // margin-right: auto;
-    text-align: center;
-    display: flex;
-    image-rendering: pixelated;
-    border: inset #9aa28b 3px;
-    border-radius: 5px;
-    box-sizing: border-box;
-    background: linear-gradient(15deg, #cad5b5 64%, #dde2d4 70%, #dde2d4 81%, #fff 86%, #dde2d4 89%, #dde2d4 100%);
-  }
   
-  
-  
-  
-  /*Types*/ /*#region*/
+  /* #region ---------Types---------*/
   .type-list {
     display: flex;
     flex-direction: column;
-    border-left: groove #757575 3px;
-    flex: 1;
+    border: groove #757575 3px;
   }
   
   .panel-header {
-    text-transform: capitalize;
-    font-size: 1.25em;
-    padding: 5px;
-    font-family: "Staatliches", cursive;
-    letter-spacing: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.25em;
+    letter-spacing: 2px;
+    padding: 1px;
     background: linear-gradient(14deg, #460f0f 0, #891313 30%, #b31818 45%, #fd5555 65%, #b31818 95%);
     border: groove #e61515 3px;
     border-width: 3px 2px;
     text-shadow: #fd5555 -1px 1px;
+    margin: 0%;
   }
   
   .type-box {
     display: flex;
-    flex-direction: column;
-    flex: 1;
     justify-content: space-evenly;
     background: linear-gradient(14deg, #afafaf 50%, #ffffff 80%, #afafaf 90%);
     border-top: groove #757575 3px;
+    margin: 0%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
   
   .type {
-    color: rgba(0, 0, 0, 0.9);
     text-transform: capitalize;
     font-size: 1.25em;
-    padding: 2px;
-    margin: 2px;
+    padding: 5px 2px 5px 2px;
+    margin: 5px 2px 5px 2px;
     border: groove #757575 3px;
     border-radius: 10px;
     width: 150px;
-    font-family: "Staatliches", cursive;
     text-align: center;
     letter-spacing: 2px;
     text-shadow: rgba(255, 255, 255, 0.3) -1px 1px;
-    align-self: center;
     background: linear-gradient(
         15deg,
         rgba(128, 128, 128, 0.5) 64%,
@@ -133,12 +113,9 @@
     );
     background-blend-mode: hard-light;
   }
-  
   /*#endregion*/
   
-  
-  
-  
+
   /* #region ---------Divider---------*/
   .divider {
     display: flex;
@@ -185,14 +162,62 @@
   /*#endregion*/
   
   
-  
   /* #region ---------Right side---------*/
   
-  // .right-panel {
-  //   padding: 0;
-  //   width: 379px;
-  // }
+  .bottom-right-panel{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .side-by-side-panel{
+    display: flex;
+    justify-content: space-around;
+    // margin-bottom: 3rem;
+  }
+
+  .abilities{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    // align-items: flex-start;
+  }
+
+  .held-items-panel{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    // align-items: flex-start;
+  }
+
+  .measurements{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+  }
+
+.next-prev-pokemon{
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  align-self: center;
+}
+
+
+
   
+
+  .panel-right {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: inset #b31818 3px;
+    border-radius: 3px;
+  }
+
+
   .panel-row {
     display: flex;
     border-bottom: groove #757575 3px;
@@ -212,118 +237,49 @@
   
   /*Statblock*/
   .stats {
-    width: 150px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 5px;
-    flex: 1;
-  }
-  .stat-line {
-    font-size: 17px;
-    text-transform: capitalize;
-  }
-  
-  
-  
-  /*Evolution panel*/
-  .panel-evo {
-    flex-wrap: wrap;
-  }
-  .empty-evo {
-    background: linear-gradient(15deg, #83887b 64%, #8b8f81 70%, #8b8f81 81%, #babfb1 86%, #8b8f81 89%, #8b8f81 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /*Less than 3 evolutions*/
-  .poke-ball {
-    border: solid black 4px;
-    background: black;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    align-items: center;
-    position: relative;
-    opacity: 0.8;
-  }
-  .poke-ball-top {
-    background: #83887a;
-    flex: 1;
-    width: 100%;
-    opacity: 0.3;
-  }
-  .poke-ball-center {
-    display: flex;
-    width: 22px;
-    height: 22px;
-    border: solid black 4px;
-    border-radius: 50%;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    position: absolute;
-    top: 10px;
-  }
-  .poke-ball-dot {
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    background: black;
-    border: solid #83887a 6px;
-  }
-  .poke-ball-bottom {
-    background: #83887a;
-    flex: 1;
-    width: 100%;
-  }
-  .evo-header {
-    width: 100%;
-    /* background: linear-gradient(14deg, #460f0f 0, #891313 30%, #b31818 45%, #fd5555 65%, #b31818 95%);
-    border: groove #e61515 3px;
-    border-width: 5px 0;
-    text-shadow: #fd5555 -1px 1px; */
-    margin-bottom: 2px;
-  }
-  .evo-num {
-    /* padding: 2px;
-    font-size: 16px;
-    font-weight: bold;
-    background-blend-mode: color-dodge;
-    background: linear-gradient(
-        15deg,
-        rgba(128, 128, 128, 0.5) 64%,
-        rgba(138, 138, 138, 0.5) 70%,
-        rgba(230, 230, 230, 0.5) 81%,
-        rgba(255, 255, 255, 0.5) 86%,
-        rgba(220, 220, 220, 0.5) 89%,
-        rgba(230, 230, 230, 0.5) 100%
-    );
-    background-color: #3a3b38;
-    border-radius: 13px;
-    border-color: #888888;
-    text-shadow: #888888 -1px 1px;
-    width: 50%; */
-    font-family: "Staatliches", cursive;
-    font-size: 1.25em;
-    letter-spacing: 2px;
-    background: transparent;
-    border: none;
-    text-shadow: #e78181 -1px 1px;
-  }
-  .evo-name {
-    width: auto;
-    padding: 3px;
-    margin-bottom: 3px;
-    text-align: right;
+    align-items: center;
+    place-content: center;
+    padding-top: 0.3rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    .stat-line-right-align{
+      align-self: flex-end;
+    }
+    .stat-line-dots{
+      width: 100%;
+      padding: 0px 0.5rem;
+    }
+    .stat-line {
+      width: 80%;
+      text-transform: capitalize;
+      margin-top: 5px;
+      margin-bottom: 0%;
+      max-width: 100%;
+    }
+    .stat-line-li{
+      display: flex;
+      flex-wrap: nowrap;
+      width: 90%;
+    }
   }
   
   
+
   
   
+
+
+
+
+
   /*Blue deco squares*/
   .blue-buttons {
     flex-wrap: wrap;
@@ -347,11 +303,15 @@
     background-blend-mode: hard-light;
     background-color: #09a8ff;
   }
+
   
-  
+
+
+
+
+
   
   /*Move list*/
-  
   .move-list {
     display: flex;
   }
@@ -551,7 +511,7 @@
       gap: unset;
     }
   
-    .left{
+    .panel-left{
       width: 45%;
     }
   
@@ -570,7 +530,7 @@
       flex: 1;
     }
   
-    .right{
+    .panel-right{
       width: 45%;
     }
   }
