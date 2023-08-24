@@ -40,17 +40,17 @@ export default function Navbar() {
         <>
             <nav id="navbar">
                 <header id="logo">
-                    <Link to="/home">
+                    <Link to="/pokemon/1">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/269px-International_Pok%C3%A9mon_logo.svg.png" alt="logo"/>
                     </Link>
                 </header>
 
                 <ul>
                     <li>
-                        <Link to="/home">Home</Link>
+                        <Link to="/pokemon/1">Pokédex</Link>
                     </li>
                     <li>
-                        <Link to="/pokedex">Pokedex</Link>
+                        <Link to="/pokedex">Pokemon List</Link>
                     </li>
                 </ul>
                 
