@@ -19,6 +19,8 @@ import PokemonEntry from './routes/PokemonEntry.jsx';
 
 // import CSS
 import './index.scss'
+//import './styles/normalize.scss'
+import './styles/__type-colors.scss'
 
 
 

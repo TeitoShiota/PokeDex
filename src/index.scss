@@ -8,10 +8,19 @@
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  display: flex;
+  //place-items: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100%;
+  margin: 0;
+
   text-align: center;
   font-family: monospace;
+  
+
+  
 }
 /*#endregion*/
 
@@ -27,11 +36,10 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
+
   min-width: 320px;
   min-height: 100vh;
+
   
   /* color: rgba(255, 255, 255, 0.87); */
   background: linear-gradient(
@@ -56,6 +64,14 @@ h1 {
 
 @media screen and (min-width:768px){
 
+  main{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   body{
     background: linear-gradient(
       15deg,
@@ -71,8 +87,5 @@ h1 {
     background-color: #213547;
     background-blend-mode: overlay;
 
-  .pokedex{
-    width: 45vw;
-  }
   }
 }
