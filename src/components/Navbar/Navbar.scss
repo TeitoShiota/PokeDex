@@ -1,0 +1,112 @@
+#navbar{
+    width: 100%;
+    display: flex;
+
+    justify-content: space-between;
+}
+
+
+/* #region ---------Header / Logo---------*/
+#logo{
+    height: 100%;
+  }
+  
+  /* #logo a img{
+      width: 20rem;
+  } */
+  /*#endregion*/
+  
+  /* #region ---------Searchbar---------*/
+  .search-container {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  input {
+    text-align: center;
+    height: 2.2rem;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  /* #region ---------Pokeball---------*/
+  .ball-container {
+    overflow: hidden;
+    width: 47px;
+    height: 47px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: relative;
+    animation: shake 1.5s ease-in infinite;
+    animation-play-state: paused;
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: rotate(5deg);
+    }
+    5% {
+      transform: rotate(-5deg);
+    }
+    10% {
+      transform: rotate(5deg);
+    }
+    15% {
+      transform: rotate(-5deg);
+    }
+    20% {
+      transform: rotate(5deg);
+    }
+    25% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  .ball-container:hover {
+    cursor: pointer;
+    animation-play-state: running;
+  }
+  
+  .upper-half-ball {
+    position: absolute;
+    width: 100%;
+    height: 42%;
+    background-color: #fe0065;
+  }
+  
+  .bottom-half-ball {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 42%;
+    background-color: #f2f2f2;
+  }
+  
+  .center-ball {
+    background-color: white;
+    width: 20%;
+    height: 20%;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .center-line {
+    background: black;
+    height: 100%;
+    width: 100%;
+  }
+  /*#endregion*/
