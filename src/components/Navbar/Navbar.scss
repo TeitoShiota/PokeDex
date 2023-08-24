@@ -1,15 +1,28 @@
+/* ---------Nav---------*/
 #navbar{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    justify-content: space-between;
+    justify-content: space-around;
 
     >*{
       width: fit-content;
     }
 
+    ul{
+      display: flex;
+      gap: 2rem;
+
+      li a{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ffcc01;
+        -webkit-text-fill-color: #ffcc01; /* Will override color (regardless of order) */
+        -webkit-text-stroke: 1px #1f468d; /*Shorthand for size and color of the outline/stroke*/
+      }
+    }
 }
 
 /* #region ---------Header / Logo---------*/
@@ -17,21 +30,17 @@
     height: 100%;
   }
   
-  /* #logo a img{
-      width: 20rem;
-  } */
+  #logo a img{
+      width: 15rem;
+  }
+  
   /*#endregion*/
   
   /* #region ---------Searchbar---------*/
   .search-container {
     width: 100%;
     height: auto;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
     display: flex;
-    justify-self: center;
-    align-self: center;
-    justify-content: center;
     align-items: center;
   }
   
@@ -40,6 +49,11 @@
     height: 2.2rem;
     border-radius: 4px;
     margin-right: 10px;
+  }
+
+  #search-button{
+    background-color: #ffffff00;
+    border: none;
   }
   
   /* #region ---------Pokeball---------*/
@@ -116,6 +130,9 @@
     width: 100%;
   }
   /*#endregion*/
+
+
+ /* ---------Media Queries---------*/
 
   @media screen and (min-width: 768px) {
     #navbar{

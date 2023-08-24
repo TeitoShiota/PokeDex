@@ -121,15 +121,16 @@ export default function EntryDex() {
                   
                   <div>
                     <b>Held Items</b>
+                    { pokemon?.held_items.lenght < 0 ? 
                     <ul>
                       {pokemon?.held_items.map((info) => (
                         <li>
-                          {info.item.name} <br /> {/* if none add text none *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!/}
+                          {info.item.name} <br /> 
                           {/* {info.version_details.name} */}
                         </li>
                         )) //stats er et array (af data [] på siden), så vi mapper den. ({} objekt)
                       }
-                    </ul>
+                    </ul> : <p>None</p> }
                   </div>
                     <div>
                       <b>Base stats</b>
