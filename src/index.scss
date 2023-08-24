@@ -18,11 +18,11 @@ a:hover {
 
 body {
   // THESE LINES BROKE IT!!!
-  // margin: 0;
-  // display: flex;
-  // place-items: center;
-  /* min-width: 320px;
-  min-height: 100vh; */
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
   
   /* color: rgba(255, 255, 255, 0.87); */
   background: linear-gradient(
@@ -61,5 +61,9 @@ h1 {
     );
     background-color: #213547;
     background-blend-mode: overlay;
+
+  .pokedex{
+    width: 45vw;
+  }
   }
 }
