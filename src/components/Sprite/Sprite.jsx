@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function PokemonSprite({pokemon}) {
+export default function Sprite({pokemon}) {
 
     // states for pokedex
     const [ spriteURL, setSpriteURL ] = useState('');
