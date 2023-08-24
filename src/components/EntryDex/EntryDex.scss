@@ -1,18 +1,7 @@
-@import '../../styles/_type-colors';
-
-/* #region ---------Background---------*/
-#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-    font-family: monospace;
-  }
-  /*#endregion*/
-  
-  
-  /* #region ---------Main---------*/
+   /* #region ---------Main---------*/
   main{
+    display: flex;
+    justify-items: center;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -25,8 +14,8 @@
   
   /* #region ---------Pokedex---------*/
   .pokedex {
+    width: 95%;
     background-color: #e61515;
-    margin: 0 auto;
     padding: 1em;
     border-radius: 15px;
     border: double black 10px;
@@ -205,74 +194,6 @@
     );
     background-blend-mode: hard-light;
   }
-  
-  
-//   /*Type colors*/ /*#region*/
-//   .normal {
-//     background-color: #bfbfbf;
-//   }
-//   .fighting {
-//     background-color: #d87c58;
-//   }
-//   .flying {
-//     background-color: #999ade;
-//   }
-//   .poison {
-//     background-color: #925192;
-//   }
-//   .ground {
-//     background-color: #dea761;
-//   }
-//   .rock {
-//     background-color: #897864;
-//   }
-//   .bug {
-//     background-color: #b1c967;
-//   }
-//   .ghost {
-//     background-color: #c195dc;
-//   }
-//   .steel {
-//     background-color: #49769c;
-//   }
-//   .fire {
-//     background-color: #cf1414;
-//   }
-//   .water {
-//     background-color: #1689de;
-//   }
-//   .grass {
-//     background-color: #47a047;
-//   }
-//   .electric {
-//     background-color: #e6b700;
-//   }
-//   .psychic {
-//     background-color: #fa43b8;
-//   }
-//   .ice {
-//     background-color: #98c3de;
-//   }
-//   .dragon {
-//     background-color: #89315d;
-//   }
-//   .dark {
-//     background-color: #282433;
-//   }
-//   .fairy {
-//     background-color: #dca0ce;
-//   }
-//   .unknown {
-//     background-color: #545454;
-//   }
-//   .shadow {
-//     background-color: #364163;
-//   }
-//   /*#endregion*/
-  
-  /*#endregion*/
-  
-  
   
   /*#endregion*/
   
@@ -701,6 +622,7 @@
   
     .pokedex {
       flex-direction: row;
+      max-width: 1280px;
       gap: unset;
     }
   
