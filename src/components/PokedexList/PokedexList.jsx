@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
-import { PokedexContext } from '../contexts/PokedexContext'
+import { PokedexContext } from '../../contexts/PokedexContext'
 
 
 export default function PokedexList() {

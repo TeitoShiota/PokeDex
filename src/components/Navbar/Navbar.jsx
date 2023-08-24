@@ -1,7 +1,10 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { PokedexContext } from '../contexts/PokedexContext'
+import { PokedexContext } from '../../contexts/PokedexContext'
+
+// Style Imports
+import './Navbar.scss'
 
 export default function Navbar() {
     const { checkPokemonInPokedex } = useContext(PokedexContext)
@@ -35,7 +38,13 @@ export default function Navbar() {
 
     return (
         <>
-            <nav>
+            <nav id="navbar">
+                <header id="logo">
+                    <Link to="/home">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/269px-International_Pok%C3%A9mon_logo.svg.png" alt="logo"/>
+                    </Link>
+                </header>
+
                 <ul>
                     <li>
                         <Link to="/home">Home</Link>
@@ -44,11 +53,17 @@ export default function Navbar() {
                         <Link to="/pokedex">Pokedex</Link>
                     </li>
                 </ul>
-                <form onSubmit={handleSubmit}>
-                    <input type="text" name="search" id="search" value={search} onChange={handleChange} placeholder="Name / id" />
+                
+                <form id='searchForm' className="search-container" onSubmit={handleSubmit}>
+                    <input id="name-input" name="search" type="text" value={search} onChange={handleChange} placeholder="Name / id" />
                     <button type='submit'>
-                        <span><p>Search</p></span>
-                    </button>
+                        <div id="search-btn" className="ball-container">
+                            <div className="upper-half-ball"></div>
+                            <div className="bottom-half-ball"></div>
+                            <div className="center-ball"></div>
+                            <div className="center-line"></div>
+                        </div>
+                    </button>  
                 </form>
             </nav>
         </>
