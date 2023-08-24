@@ -4,21 +4,16 @@ import { useParams } from "react-router-dom";
 // Context Imports
 import { PokedexContext } from "../../contexts/PokedexContext";
 
-// Utilits Imports
-import { spriteURLConcat } from "../../utils/pokedexUtils";
+// Component Imports
+import Sprite from "../Sprite/Sprite";
+import SpriteControls from "../SpriteControls/SpriteControls";
 
 // Style Imports
 import './EntryDex.scss'
-import { set } from "immutable";
 
 export default function EntryDex() {
     // Contexts for Pokedex
-    const { pokedex, getAdditionalInfo, loading, error } = useContext(PokedexContext)
-
-    // states for pokedex
-    const [ spriteURL, setSpriteURL ] = useState('');
-    const [ spriteBack, setSpriteBack ] = useState(false);
-    const [ spriteShiny, setSpriteShiny ] = useState(false);
+    const { pokedex, getAdditionalInfo, loading, error } = useContext(PokedexContext);
 
     // Get the id from the url
     const { id } = useParams();
@@ -47,66 +42,6 @@ export default function EntryDex() {
     ){
         getAdditionalInfo(pokemon);
     }
-
-    function spriteToggle(event) {
-        event.preventDefault();
-        
-        switch (event.target.name) {
-            case 'spriteBack': 
-                if (pokemon?.sprites.back_default) {
-                    setSpriteBack(!spriteBack);
-                } else {
-                    setSpriteBack(false);
-                }
-                if (spriteShiny === true && pokemon?.sprites.back_shiny) {
-                    setSpriteBack(!spriteBack);
-                } else {
-                    setSpriteBack(false);
-                }
-             
-            case 'spriteShiny': 
-                if (pokemon?.sprites.front_shiny) {
-                    setSpriteShiny(!spriteShiny);
-                } else {
-                    setSpriteShiny(false);
-                }
-                if (spriteBack === true && pokemon?.sprites.back_shiny) {
-                    setSpriteShiny(!spriteShiny);
-                } else {
-                    setSpriteBack(false);
-                }
-        }
-        // concatenate the url for the sprite image based on the pokemon id and the sprite type (front or back) and if it is shiny and set it as the sprite url 
-        setSpriteURL('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + spriteBack ? 'back/' : '' + spriteShiny ? 'shiny/' : '' + pokemon.id + '.png');
-    }
-
-    function spriteURLConcat() {
-        if ( spriteURL === '' ) {
-            // Use a callback function to access the previous state
-            setSpriteURL(prevSpriteURL => {
-              // Create a new variable to store the new state
-              let newSpriteURL = prevSpriteURL + 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
-              if (spriteBack === true) {
-                newSpriteURL = newSpriteURL + 'back/';
-              }
-              if (spriteShiny === true) {
-                newSpriteURL = newSpriteURL + 'shiny/';
-              }
-              newSpriteURL = newSpriteURL + pokemon.id + '.png';
-              // Return the new state
-              return newSpriteURL;
-            });
-          }
-    }
-    
-
-
-    // concatenate the url for the sprite image based on the pokemon id and the sprite type (front or back) and if it is shiny and set it as the sprite url
-    spriteURLConcat();
-
-    // spriteURLConcat();
-    console.log('spriteurl: ' + spriteURL);
-
     
 
     if (pokemon.height === undefined){return <h1>Loading Additional data...</h1>}
@@ -123,9 +58,10 @@ export default function EntryDex() {
                       <p>No.{pokemon?.id}</p>
                     </div>
 
-                    <div>
+                    <Sprite pokemon={pokemon} />
+                    {/* <div>
                       <img src={spriteURL} alt={'Picture of ' + pokemon?.name} className='pokemon-sprite' />
-                    </div>
+                    </div> */}
 
                     {/* <div className='pokemon-sprite'>
                       <img src={pokemon?.sprites.front_default} alt="{pokemon?.name}"/>
