@@ -4,25 +4,34 @@ import { useParams } from "react-router-dom";
 // Context Imports
 import { PokedexContext } from "../../contexts/PokedexContext";
 
+// Utilits Imports
+import { spriteURLConcat } from "../../utils/pokedexUtils";
+
 // Style Imports
 import './EntryDex.scss'
 import { set } from "immutable";
 
 export default function EntryDex() {
+    // Contexts for Pokedex
     const { pokedex, getAdditionalInfo, loading, error } = useContext(PokedexContext)
 
+    // states for pokedex
     const [ spriteURL, setSpriteURL ] = useState('');
     const [ spriteBack, setSpriteBack ] = useState(false);
     const [ spriteShiny, setSpriteShiny ] = useState(false);
 
+    // Get the id from the url
     const { id } = useParams();
-
+    
     if (loading) {return <h1>Loading...</h1>}
     if (error) {return <h1>Error: {error.message}</h1>}
+
     // Get the pokemon from the pokedex based on id
     const pokemon = pokedex[id - 1];
+
     // If the pokemon doesn't exist, return an error
     if (pokemon === undefined) {return <h1>Error: Pokemon not found</h1>}
+
     // If the pokemon doesn't have additional info, fetch it
     if (pokemon.height === undefined 
         || pokemon.weight === undefined 
@@ -38,7 +47,6 @@ export default function EntryDex() {
     ){
         getAdditionalInfo(pokemon);
     }
-    console.log(pokemon);
 
     function spriteToggle(event) {
         event.preventDefault();
@@ -90,6 +98,7 @@ export default function EntryDex() {
             });
           }
     }
+    
 
 
     // concatenate the url for the sprite image based on the pokemon id and the sprite type (front or back) and if it is shiny and set it as the sprite url
@@ -128,7 +137,7 @@ export default function EntryDex() {
                     <p className="panel-header">Type</p>
                     <ul className="type-box">
                       {pokemon?.types.map((info) => (
-                        <li key={info.type.name} className="type">
+                        <li key={info.type.name} className={"type " + info.type.name}>
                           {info.type.name}
                         </li>
                         )) //stats er et array (af data [] på siden), så vi mapper den. ({} objekt)
@@ -202,37 +211,6 @@ export default function EntryDex() {
 
             </section>}
             {pokemon == null && <p>Pokémon does not exist</p>} {/*shortcirquits if pokemon is not null, displays the pp*/}
-
-
-
-
-            {/* <h1>{pokemon?.name}</h1>
-            <h2>ID: {pokemon?.id}</h2>
-            <h2>Height: {pokemon?.height}</h2>
-            <h2>Weight: {pokemon?.weight}</h2>
-            <h2>Types: {pokemon?.types.map((type) => (
-                <li key={type.type.name}>{type.type.name}</li>
-            ))}</h2>
-            <h2>Abilities: {pokemon?.abilities.map((ability) => (
-                <li key={ability.ability.name}>{ability.ability.name}</li>
-            ))}</h2>
-            <h2>Forms: {pokemon?.forms.map((form) => (
-                <li key={form.name}>{form.name}</li>
-            ))}</h2>
-            <h2>Game Indices: {pokemon?.game_indices.map((game_index) => (
-                <li key={game_index.version.name}>{game_index.version.name}</li>
-            ))}</h2>
-            <h2>Held Items: {pokemon?.held_items.map((held_item) => (
-                <li key={held_item.item.name}>{held_item.item.name}</li>
-            ))}</h2>
-            <h2>Moves: {pokemon?.moves.map((move) => (
-                <li key={move.move.name}>{move.move.name}</li>
-            ))}</h2>
-            <h2>Species: {pokemon?.species.name}</h2>
-            <h2>Stats: {pokemon?.stats.map((stat) => (
-                <li key={stat.stat.name}>{stat.stat.name}</li>
-            ))}</h2>
-            <h2>Sprites: {pokemon?.sprites.front_default}</h2> */}
 
         </>
     );

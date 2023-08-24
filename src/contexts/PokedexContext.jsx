@@ -75,15 +75,7 @@ export const PokedexProvider = ({ children }) => {
             } else {return false;}
     }
 
-
-    useEffect(() => {
-        if (pokedex.length > 0) {
-            // if pokedex is already loaded, do nothing
-            console.log("Pokedex already loaded");
-            return;
-        }
-        console.log("Loading pokedex");
-        // load pokedex from the server
+    function initGetAllPokemons() {
         getAllPokemons()
             .then((data) => {
                 // add id to each pokemon
@@ -99,7 +91,19 @@ export const PokedexProvider = ({ children }) => {
                 setError(error);
                 // stop loading
                 setLoading(false);
-            });
+        });
+    }
+
+
+    useEffect(() => {
+        if (pokedex.length > 0) {
+            // if pokedex is already loaded, do nothing
+            console.log("Pokedex already loaded");
+            return;
+        }
+        console.log("Loading pokedex");
+        // load pokedex from the server
+        initGetAllPokemons();
     }, []);
 
     return (
