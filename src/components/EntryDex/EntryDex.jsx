@@ -61,16 +61,6 @@ export default function EntryDex() {
                     <Sprite pokemon={pokemon} />
 
                     <SpriteControls/>
-                    
-                    {/* <div>
-                      <img src={spriteURL} alt={'Picture of ' + pokemon?.name} className='pokemon-sprite' />
-                    </div> */}
-
-                    {/* <div className='pokemon-sprite'>
-                      <img src={pokemon?.sprites.front_default} alt="{pokemon?.name}"/>
-                      <img src={pokemon?.sprites.back_default} alt="{pokemon?.name}" />
-                    </div> */}
-
                 
                   <div className="type-list">
                     <p className="panel-header">Type</p>
