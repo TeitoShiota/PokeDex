@@ -124,11 +124,11 @@ export default function EntryDex() {
                     </div> */}
 
                 
-                  <div>
-                    <p>Type</p>
-                    <ul>
+                  <div className="type-list">
+                    <p className="panel-header">Type</p>
+                    <ul className="type-box">
                       {pokemon?.types.map((info) => (
-                        <li>
+                        <li key={info.type.name} className="type">
                           {info.type.name}
                         </li>
                         )) //stats er et array (af data [] på siden), så vi mapper den. ({} objekt)
@@ -191,8 +191,7 @@ export default function EntryDex() {
                       <b>Base stats</b>
                       <ul>
                         {pokemon?.stats.map((info) => (
-                          // <li key={info.id}>
-                          <li>
+                          <li key={info.id}>
                             {info.stat.name} {info.base_stat}
                           </li>
                           )) //stats er et array (af data [] på siden), så vi mapper den. ({} objekt)
