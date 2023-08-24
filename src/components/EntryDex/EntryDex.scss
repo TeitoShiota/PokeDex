@@ -76,67 +76,6 @@
   
   
   
-  
-  .sprite-controls {
-    display: flex;
-    justify-content: space-around;
-    font-family: "Staatliches", cursive;
-    margin-bottom: 10px;
-  }
-  
-  .sprite-control {
-    height: 30px;
-    width: 30px;
-    border: groove grey 3px;
-    border-radius: 20px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: rotate(60deg);
-    color: black;
-    padding: 1px;
-    border-color: #b06868;
-  }
-  
-  .sprite-control:hover {
-    border-color: #b8ed7c;
-  }
-  .sprite-control:active {
-    border-color: #f4fcb9;
-  }
-  
-  .sprite-control > * {
-    transform: rotate(-60deg);
-  }
-  
-  .sprite-controls-shiny {
-    transform: rotate(0);
-    background: linear-gradient(14deg, #bf8823 10%, #ffee90 25%, #e6a617 47%, #ffee90 73%, #fff6c8 74%, #ffee90 80%);
-    border-color: #cdb589;
-    width: 90px;
-    text-shadow: white -1px 1px;
-  }
-  
-  .sprite-control-selected {
-    border-color: #b8ed7c;
-  }
-  
-  .sprite-controls-shiny > * {
-    transform: rotate(0);
-  }
-  .pokemon-sprite-small {
-    height: 120px;
-    width: 120px;
-    margin: 3px 0;
-  }
-  
-  
-  
-  
-  
-  
-  
   /*Types*/ /*#region*/
   .type-list {
     display: flex;
@@ -589,20 +528,6 @@
   /*#endregion*/
   
   /*#endregion*/
-  
-  /* #region ---------Footer---------*/
-  // footer {
-  //   position: fixed;
-  //   left: 0;
-  //   bottom: 0;
-  //   width: 100%;
-  //   padding: 1rem;
-  //   background-color: #3363af;
-  //   font-size: 1.3rem;
-  //   text-align: center;
-  // }
-  /*#endregion*/
-  
   
   
   

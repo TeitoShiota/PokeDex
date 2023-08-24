@@ -50,13 +50,13 @@ export default function Navbar() {
                         <Link to="/pokemon/1">Pokédex</Link>
                     </li>
                     <li>
-                        <Link to="/pokedex">Pokemon List</Link>
+                        <Link to="/pokedex">Pokélist</Link>
                     </li>
                 </ul>
                 
                 <form id='searchForm' className="search-container" onSubmit={handleSubmit}>
                     <input id="name-input" name="search" type="text" value={search} onChange={handleChange} placeholder="Name / id" />
-                    <button type='submit'>
+                    <button type='submit' id="search-button">
                         <div id="search-btn" className="ball-container">
                             <div className="upper-half-ball"></div>
                             <div className="bottom-half-ball"></div>
