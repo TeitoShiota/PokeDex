@@ -7,6 +7,7 @@ import { PokedexContext } from "../../contexts/PokedexContext";
 // Component Imports
 import Sprite from "../Sprite/Sprite";
 import SpriteControls from "../SpriteControls/SpriteControls";
+import NextPrev from "../NextPrev/NextPrev";
 
 // Style Imports
 import './EntryDex.scss'
@@ -128,7 +129,7 @@ export default function EntryDex() {
                           <b>Abilities</b>
                           <ul>
                             {pokemon?.abilities.map((info) => (
-                              <li>
+                              <li key={info?.ability.name}>
                                 {info.ability.name} <br />
                                 {info.is_hidden && <i> Hidden ability</i>}
                               </li>
@@ -150,22 +151,9 @@ export default function EntryDex() {
                           }
                         </ul> : <p>None</p> }
                       </div>
-
+                      <NextPrev pokemon={pokemon}  />
                     </section>
 
-                    <section className="next-prev-pokemon">
-                      <button className="hide-button">
-                        <div className="button"></div>
-                      </button>
-
-                      <div className="screen num-input">
-                        {pokemon?.id}
-                      </div>
-
-                      <button className="hide-button">
-                        <div className="button"></div>
-                      </button>
-                    </section>
                   </section>
                   
 
