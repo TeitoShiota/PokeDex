@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 
 import { PokedexContext } from '../../contexts/PokedexContext'
 
+// Style Imports
+import './Pokedexlist.scss'
 
 export default function PokedexList() {
 
@@ -14,20 +16,20 @@ export default function PokedexList() {
 
     return (
         <>
-            <h1>Pokedex</h1>
+        <section className='pokemon-list'>
+            <h1>List of Pokémon</h1>
             <ul>
                 {pokedex.map((pokemon) => (
                     <Link to={`/pokemon/${pokemon.id}`} key={pokemon.id}>
-                        <span>
+                        <span className='pokemon-list-items'>
                             <li>
-                                <h2>ID: {pokemon.id} </h2>
-                                <h2>{pokemon.name}</h2>
+                                <h2>#{pokemon.id} {pokemon.name}</h2>
                             </li>
                         </span>
                     </Link>
                 ))}
             </ul>
-
+        </section>
         </>
     )
 }

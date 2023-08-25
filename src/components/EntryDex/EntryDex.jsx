@@ -68,7 +68,7 @@ export default function EntryDex() {
                           <li key={info.type.name} className={"type " + info.type.name}>
                             {info.type.name}
                           </li>
-                          )) //stats er et array (af data [] på siden), så vi mapper den. ({} objekt)
+                          ))
                         }
                       </ul>
                     </div>
@@ -96,7 +96,7 @@ export default function EntryDex() {
                             <li key={info.id} className="stat-line-li">
                               <span>{info.stat.name}</span> <span className="stat-line-dots"><hr /></span> <span className="stat-line-right-align">{info.base_stat}</span>
                             </li>
-                            )) //stats er et array (af data [] på siden), så vi mapper den. ({} objekt)
+                            ))
                           }
                         </ul>
                       </div>
@@ -115,15 +115,13 @@ export default function EntryDex() {
                       <div className="blue-button"></div>
                     </div>
 
-
                   <section className="bottom-right-panel">
                     <div className="screen measurements">
                         <p><b>Height:</b> {pokemon?.height} </p>
                         <p><b>Weight:</b> {pokemon?.weight} </p>
                     </div>
 
-
-                    <section className="side-by-side-panel">
+                    <section className="side-panels">
                       <div className="screen abilities">
                           <b>Abilities</b>
                           <ul>
@@ -132,7 +130,7 @@ export default function EntryDex() {
                                 {info.ability.name} <br />
                                 {info.is_hidden && <i> Hidden ability</i>}
                               </li>
-                              )) //stats er et array (af data [] på siden), så vi mapper den. ({} objekt)
+                              )) 
                             }
                           </ul>
                         </div>
@@ -146,7 +144,7 @@ export default function EntryDex() {
                               {info.item.name} <br /> 
                               {/* {info.version_details.name} */}
                             </li>
-                            )) //stats er et array (af data [] på siden), så vi mapper den. ({} objekt)
+                            )) 
                           }
                         </ul> : <p>None</p> }
                       </div>
@@ -158,7 +156,7 @@ export default function EntryDex() {
                         <div className="button"></div>
                       </button>
 
-                      <div className="screen num-input">
+                      <div className="screen num-display">
                         {pokemon?.id}
                       </div>
 
@@ -167,14 +165,8 @@ export default function EntryDex() {
                       </button>
                     </section>
                   </section>
-                  
-
-
-
-
 
                   </section>
-
             </section>}
             {pokemon == null && <p>Pokémon does not exist</p>} {/*shortcirquits if pokemon is not null, displays the pp*/}
         </>

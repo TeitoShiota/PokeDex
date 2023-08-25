@@ -1,0 +1,54 @@
+.pokemon-list{
+    background-color: #e61515;
+    padding: 1rem;
+    border-radius: 15px;
+    border: double black 10px;
+    width: 90%;
+    margin: 1rem auto 0px auto;
+
+    h1{
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ffcc01;
+        -webkit-text-fill-color: #ffcc01; /* Will override color (regardless of order) */
+        -webkit-text-stroke: 1px #05070b; /*Shorthand for size and color of the outline/stroke*/
+        margin: 0px auto 0px auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    a{
+        color: black;
+        &:hover {
+            color: #e61515;;
+        }
+    }
+}
+
+.pokemon-list-items{
+    text-transform: capitalize;
+    li{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        background: linear-gradient(360deg, rgb(165, 205, 83) 60%, rgb(193, 217, 144) 65%);
+        border-radius: 3px;
+        border: inset #879a65 3px;
+        text-transform: capitalize;
+
+        h2{
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+ /* ---------Media Queries---------*/
+
+ @media screen and (min-width: 768px) {
+    .pokemon-list{
+        width: 70%;
+        h1{
+            font-size: 2.5rem;
+        }
+    }
+  }
