@@ -59,8 +59,6 @@ export default function EntryDex() {
                     </div>
 
                     <Sprite pokemon={pokemon} />
-
-                    <SpriteControls/>
                 
                     <div className="type-list">
                       <p className="panel-header">Type</p>

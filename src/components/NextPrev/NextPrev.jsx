@@ -6,14 +6,14 @@ export default function NextPrev({pokemon}) {
     function nextPokemon() {
         let nextPokemon = Number(id) + 1;
         if (nextPokemon > 1281) {
-            location.pathname = '/pokemon/' + 1;
+            nextPokemon = 1;
         }
         location.pathname = '/pokemon/' + nextPokemon ;
     }
     function prevPokemon() {
         let prevPokemon = Number(id) - 1;
         if (prevPokemon < 1) {
-            location.pathname = '/pokemon/' + 1281;
+            prevPokemon = 1281;
         }
         location.pathname = '/pokemon/' + prevPokemon;
     }
