@@ -147,24 +147,9 @@ export default function EntryDex() {
                           }
                         </ul> : <p>None</p> }
                       </div>
+                    </section>
                       <NextPrev pokemon={pokemon}  />
                     </section>
-
-                    <section className="next-prev-pokemon">
-                      <button className="hide-button">
-                        <div className="button"></div>
-                      </button>
-
-                      <div className="screen num-input">
-                        {pokemon?.id}
-                      </div>
-
-                      <button className="hide-button">
-                        <div className="button"></div>
-                      </button>
-                    </section>
-                  </section>
-
                   </section>
             </section>}
             {pokemon == null && <p>Pokémon does not exist</p>} {/*shortcirquits if pokemon is not null, displays the pp*/}

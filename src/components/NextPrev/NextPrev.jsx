@@ -23,7 +23,7 @@ export default function NextPrev({pokemon}) {
             <button className="hide-button" onClick={prevPokemon}>
               <div className="button"></div>
             </button>
-            <div className="screen num-input">
+            <div className="screen num-display">
               {pokemon?.id}
             </div>
             <button className="hide-button" onClick={nextPokemon}>
