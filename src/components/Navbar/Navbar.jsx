@@ -56,7 +56,7 @@ export default function Navbar() {
                 
                 <form id='searchForm' className="search-container" onSubmit={handleSubmit}>
                     <input id="name-input" name="search" type="text" value={search} onChange={handleChange} placeholder="Name / id" />
-                    <button type='submit' id="search-button">
+                    <button type='submit' className="hide-button">
                         <div id="search-btn" className="ball-container">
                             <div className="upper-half-ball"></div>
                             <div className="bottom-half-ball"></div>

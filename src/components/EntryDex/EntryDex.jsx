@@ -7,6 +7,7 @@ import { PokedexContext } from "../../contexts/PokedexContext";
 // Component Imports
 import Sprite from "../Sprite/Sprite";
 import SpriteControls from "../SpriteControls/SpriteControls";
+import NextPrev from "../NextPrev/NextPrev";
 
 // Style Imports
 import './EntryDex.scss'
@@ -43,7 +44,6 @@ export default function EntryDex() {
         getAdditionalInfo(pokemon);
     }
     
-
     if (pokemon.height === undefined){return <h1>Loading Additional data...</h1>}
     return (
         <>
@@ -51,7 +51,7 @@ export default function EntryDex() {
                 <section className='pokedex'> {/*?. null operator ekisterer den eller gør ikke noget.*/}
 
                   {/* Left */}
-                  <section className='panel left'>
+                  <section className='panel-left'>
 
                     <div className='pokemon-name screen'>
                       <p>{pokemon?.name}</p> 
@@ -59,96 +59,110 @@ export default function EntryDex() {
                     </div>
 
                     <Sprite pokemon={pokemon} />
-                    {/* <div>
-                      <img src={spriteURL} alt={'Picture of ' + pokemon?.name} className='pokemon-sprite' />
-                    </div> */}
-
-                    {/* <div className='pokemon-sprite'>
-                      <img src={pokemon?.sprites.front_default} alt="{pokemon?.name}"/>
-                      <img src={pokemon?.sprites.back_default} alt="{pokemon?.name}" />
-                    </div> */}
-
                 
-                  <div className="type-list">
-                    <p className="panel-header">Type</p>
-                    <ul className="type-box">
-                      {pokemon?.types.map((info) => (
-                        <li key={info.type.name} className={"type " + info.type.name}>
-                          {info.type.name}
-                        </li>
-                        )) //stats er et array (af data [] på siden), så vi mapper den. ({} objekt)
-                      }
-                    </ul>
-                  </div>
-                  
-                    <div>
-                      <p><b>Height:</b> {pokemon?.height} </p>
-                      <p><b>Weight:</b> {pokemon?.weight} </p>
-                    </div>
-                  </section>
-                  
-                 {/* Divider */}
-                <div className='divider'>
-                  <div className='gap'></div>
-                  <div className='hinge'></div>
-                  <div className='gap'></div>
-                  <div className='hinge'></div>
-                  <div className='gap'></div>
-                  <div className='hinge'></div>
-                  <div className='gap'></div>
-                </div>
-                  
-                 {/* Right */}
-                  <section className='panel right'>
-                  
-                  <div>
-                    <b>Abilities</b>
-                    <ul>
-                      {pokemon?.abilities.map((info) => (
-                        <li>
-                          {info.ability.name} <br />
-                          {info.is_hidden && <i> Hidden ability</i>}
-                        </li>
-                        )) //stats er et array (af data [] på siden), så vi mapper den. ({} objekt)
-                      }
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <p>Location</p>
-                    {pokemon?.location_area_encounters}
-                  </div>
-                  
-                  
-                  <div>
-                    <b>Held Items</b>
-                    { pokemon?.held_items.lenght < 0 ? 
-                    <ul>
-                      {pokemon?.held_items.map((info) => (
-                        <li>
-                          {info.item.name} <br /> 
-                          {/* {info.version_details.name} */}
-                        </li>
-                        )) //stats er et array (af data [] på siden), så vi mapper den. ({} objekt)
-                      }
-                    </ul> : <p>None</p> }
-                  </div>
-                    <div>
-                      <b>Base stats</b>
-                      <ul>
-                        {pokemon?.stats.map((info) => (
-                          <li key={info.id}>
-                            {info.stat.name} {info.base_stat}
+                    <div className="type-list">
+                      <p className="panel-header">Type</p>
+                      <ul className="type-box">
+                        {pokemon?.types.map((info) => (
+                          <li key={info.type.name} className={"type " + info.type.name}>
+                            {info.type.name}
                           </li>
                           )) //stats er et array (af data [] på siden), så vi mapper den. ({} objekt)
                         }
                       </ul>
                     </div>
                   </section>
+                  
+                  {/* Divider */}
+                  <div className='divider'>
+                    <div className='gap'></div>
+                    <div className='hinge'></div>
+                    <div className='gap'></div>
+                    <div className='hinge'></div>
+                    <div className='gap'></div>
+                    <div className='hinge'></div>
+                    <div className='gap'></div>
+                  </div>
+                  
+                 {/* Right */}
+                  <section className='panel-right'>
+                    
+                    <section className="panel-row">
+                      <div className="screen stats ">
+                        <u>Base stats</u>
+                        <ul className="stat-line">
+                          {pokemon?.stats.map((info) => (
+                            <li key={info.id} className="stat-line-li">
+                              <span>{info.stat.name}</span> <span className="stat-line-dots"><hr /></span> <span className="stat-line-right-align">{info.base_stat}</span>
+                            </li>
+                            )) //stats er et array (af data [] på siden), så vi mapper den. ({} objekt)
+                          }
+                        </ul>
+                      </div>
+                    </section>
+
+                    <div className="panel-row blue-buttons">
+                      <div className="blue-button"></div>
+                      <div className="blue-button"></div>
+                      <div className="blue-button"></div>
+                      <div className="blue-button"></div>
+                      <div className="blue-button"></div>
+                      <div className="blue-button"></div>
+                      <div className="blue-button"></div>
+                      <div className="blue-button"></div>
+                      <div className="blue-button"></div>
+                      <div className="blue-button"></div>
+                    </div>
+
+
+                  <section className="bottom-right-panel">
+                    <div className="screen measurements">
+                        <p><b>Height:</b> {pokemon?.height} </p>
+                        <p><b>Weight:</b> {pokemon?.weight} </p>
+                    </div>
+
+
+                    <section className="side-by-side-panel">
+                      <div className="screen abilities">
+                          <b>Abilities</b>
+                          <ul>
+                            {pokemon?.abilities.map((info) => (
+                              <li key={info?.ability.name}>
+                                {info.ability.name} <br />
+                                {info.is_hidden && <i> Hidden ability</i>}
+                              </li>
+                              )) //stats er et array (af data [] på siden), så vi mapper den. ({} objekt)
+                            }
+                          </ul>
+                        </div>
+
+                        <div className="screen held-items-panel">
+                        <b>Held Items</b>
+                        { pokemon?.held_items.lenght < 0 ? 
+                        <ul>
+                          {pokemon?.held_items.map((info) => (
+                            <li>
+                              {info.item.name} <br /> 
+                              {/* {info.version_details.name} */}
+                            </li>
+                            )) //stats er et array (af data [] på siden), så vi mapper den. ({} objekt)
+                          }
+                        </ul> : <p>None</p> }
+                      </div>
+                      <NextPrev pokemon={pokemon}  />
+                    </section>
+
+                  </section>
+                  
+
+
+
+
+
+                  </section>
 
             </section>}
             {pokemon == null && <p>Pokémon does not exist</p>} {/*shortcirquits if pokemon is not null, displays the pp*/}
-
         </>
     );
 }
