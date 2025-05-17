@@ -1,55 +1,50 @@
+.pokemon-sprite {
+  // width: 90%;
+  width: 100%;
+  margin-top: 0.5rem;
+  // margin-left: auto;
+  // margin-right: auto;
+  text-align: center;
+  display: flex;
+  image-rendering: pixelated;
+  border: inset #9aa28b 3px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: linear-gradient(15deg, #cad5b5 64%, #dde2d4 70%, #dde2d4 81%, #fff 86%, #dde2d4 89%, #dde2d4 100%);
+}
 
-  .sprite-controls {
-    display: flex;
-    justify-content: space-around;
-    font-family: "Staatliches", cursive;
-    margin-bottom: 10px;
+#sprite-controls {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sprite-control {
+  height: 30px;
+  width: 90px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: groove grey 3px;
+  border-radius: 20px;
+  color: black;
+  padding: 1px;
+  border-color: #b06868;
+  &:hover {
+    border-color: #69ffaa;
   }
-  
-  .sprite-control {
-    height: 30px;
-    width: 30px;
-    border: groove grey 3px;
-    border-radius: 20px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: rotate(60deg);
-    color: black;
-    padding: 1px;
-    border-color: #b06868;
-  }
-  
-  .sprite-control:hover {
-    border-color: #b8ed7c;
-  }
-  .sprite-control:active {
+  &:active {
     border-color: #f4fcb9;
   }
-  
-  .sprite-control > * {
-    transform: rotate(-60deg);
+}
+
+.sprite-controls-shiny {
+  background: linear-gradient(14deg, #bf8823 10%, #ffee90 25%, #e6a617 47%, #ffee90 73%, #fff6c8 74%, #ffee90 80%);
+  border-color: #cdb589;
+  text-shadow: white -1px 1px;
+  &:hover {
+    border-color: #ffcc01;
   }
-  
-  .sprite-controls-shiny {
-    transform: rotate(0);
-    background: linear-gradient(14deg, #bf8823 10%, #ffee90 25%, #e6a617 47%, #ffee90 73%, #fff6c8 74%, #ffee90 80%);
-    border-color: #cdb589;
-    width: 90px;
-    text-shadow: white -1px 1px;
-  }
-  
-  .sprite-control-selected {
-    border-color: #b8ed7c;
-  }
-  
-  .sprite-controls-shiny > * {
-    transform: rotate(0);
-  }
-  .pokemon-sprite-small {
-    height: 120px;
-    width: 120px;
-    margin: 3px 0;
-  }
-  
+}
